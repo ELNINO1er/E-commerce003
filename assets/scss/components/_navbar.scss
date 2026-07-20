@@ -14,10 +14,10 @@
         color: #3e4b5f!important;
         font-size: 1.0625rem;
         &.active{
-            color: #62a403!important;
+            color: #3b1f16!important;
         }
         &:hover{
-            color: #62a403!important;
+            color: #3b1f16!important;
         }
     }
 }
@@ -42,8 +42,8 @@
         height: 3rem;
         line-height: 3rem;
         text-align: center;
-        color: #89c818;
-        border: 1px solid #81c408;
+        color: #5a2e1f;
+        border: 1px solid #5a2e1f;
         border-radius: 100%;
     }
     .fa-user,
@@ -64,7 +64,7 @@
         line-height: 3rem;
         text-align: center;
         border-radius: 100%;
-        background-color: #7cc000;
+        background-color: #5a2e1f;
         .badge{
             color: $white;
             background-color: #191919!important;
@@ -122,10 +122,10 @@ input[type=text]:focus {
         color: $white!important;
         font-size: 1.0625rem;
         &.active{
-            color: #62a403!important;
+            color: #3b1f16!important;
         }
         &:hover{
-            color: #62a403!important;
+            color: #3b1f16!important;
         }
     }
 }
@@ -133,7 +133,7 @@ input[type=text]:focus {
     transition: $default_transition!important;
     .btn{
         padding: 10px 40px;
-        background-color: #7cc000;
+        background-color: #5a2e1f;
     }
     .dropdown-toggle{
         &::after{
@@ -218,7 +218,7 @@ input[type=text]:focus {
                 }
             }
             span{
-                color: #91c942;
+                color: #7b432c;
                 font-size: 16px;
                 font-weight: 700;
             }

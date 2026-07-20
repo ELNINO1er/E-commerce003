@@ -20,10 +20,10 @@
             border-radius: 4px;
             &.active{
                 color: $white!important;
-                background-color: #7cc000;
+                background-color: #5a2e1f;
             }
             &:hover{
-                background-color: #7cc000;
+                background-color: #5a2e1f;
             }
             svg{
                 fill: #bdbdbd;
@@ -76,11 +76,11 @@
     height: auto;
     padding: 50px 40px;
     background-color: #f6fafb;
-    border-top: 3px solid #9fcb22;
-    border-bottom: 3px solid #9fcb22;
+    border-top: 3px solid #7b432c;
+    border-bottom: 3px solid #7b432c;
     .qoute_icon{
         i{
-            color: #9fcb22;
+            color: #7b432c;
             font-size: 80px;
             font-weight: 900;
         }
@@ -92,11 +92,11 @@
         font-weight: 400;
     }
     .testimonial_author{
-        color: #14462e;
+        color: #3b1f16;
         font-size: 22px;
         font-weight: 700;
         font{
-            color: #9fcb22;
+            color: #7b432c;
             font-size: 16px;
         }
     }
@@ -151,11 +151,11 @@
         height: 14px;
         border: none;
         outline: none;
-        background-color: #9fcb22;
+        background-color: #7b432c;
         border-radius: none;
     }
     .price-text {
-        color: #9fcb22;
+        color: #7b432c;
         font-size: 16px;
         font-weight: 500;
         display: inline-block;
@@ -174,7 +174,7 @@
     width: 100%;
     border-radius: 25px;
     padding: 2px;
-    background: linear-gradient(to top, #dddddd, #81c408);
+    background: linear-gradient(to top, #dddddd, #5a2e1f);
     .list_layout_thumb{
         width: 300px;
         height: auto;
@@ -189,7 +189,7 @@
     }
     .list_layout_bade{
         .badge_meats{
-            color: #62a403;
+            color: #3b1f16;
             font-size: 10px;
             font-weight: 700;
             background-color: #f2f7f3;
