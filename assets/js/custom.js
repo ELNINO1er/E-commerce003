@@ -8,7 +8,7 @@
 // ==================================================
 (function($) {
   "use strict";
-  
+
   // sticky header-1 - start ===============
   $(window).on('scroll', function () {
     if ($(this).scrollTop() > 122) {
@@ -18,7 +18,7 @@
     }
   });
   // sticky header-1 - end ==================
-  
+
   // sticky header-4 - start ===============
   $(window).on('scroll', function () {
     if ($(this).scrollTop() > 120) {
@@ -28,7 +28,7 @@
     }
   });
   // sticky header-4 - end ==================
-  
+
   // sticky header-4 - start ===============
   $(window).on('scroll', function () {
     if ($(this).scrollTop() > 120) {
@@ -38,7 +38,7 @@
     }
   });
   // sticky header-4 - end ==================
-  
+
   // =============== back-to-top start ===============
   $(window).scroll(function() {
     if ($(this).scrollTop() > 200) {
@@ -54,19 +54,19 @@
     });
   });
   // back to top - end
-  
+
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
-  
+
   // =============== hero nice select start ===============
   $('select').niceSelect();
   // =============== hero nice select end ===============
   // =============== aos js start ===============
   AOS.init();
   // =============== aos js end ===============
-  
+
   // multiple countdown-1 - start ===============
   $('.countdown_timer[data-countdown]').each(function() {
     var $this = $(this), finalDate = $(this).data('countdown');
@@ -79,7 +79,7 @@
     });
   });
   // multiple countdown-1 - end =================
-  
+
   // multiple countdown-2 - start ===============
   $('.countdown_timer3[data-countdown]').each(function() {
     var $this = $(this), finalDate = $(this).data('countdown');
@@ -92,7 +92,7 @@
     });
   });
   // multiple countdown-2 - end =================
-  
+
   // multiple countdown-3 - start
   $('.countdown_timer2').each(function(){
     $('[data-countdown]').each(function() {
@@ -107,16 +107,16 @@
     });
   });
   // multiple countdown-3 - end
-  
-  
+
+
   // quantity - start ================
-  
+
   function neoncart_quantity(){
     $(document).on('click', '.quantity_input .input_number_decrement, .quantity_input .input_number_increment', function (e) {
       var target = $(e.target),
       qty = target.closest('.quantity_input').find('input.input_number'),
       min, max, step, value;
-      
+
       if (qty.length) {
         min = qty.attr('min') || 0;
         max = qty.attr('max') || 0;
@@ -125,25 +125,25 @@
         max = parseInt(max);
         step = parseInt(step);
         value = parseInt(qty.val());
-        
+
         if (target.is('.input_number_increment')) {
           value += step;
         } else {
           value -= step;
         }
-        
+
         value = Math.max(min, value);
         if (max) {
           value = Math.min(max, value);
         }
-        
+
         qty.val(value).change();
       }
     });
   }
   neoncart_quantity();
   // quantity - end ================
-  
+
   // google map - start
   if ( $('#mapBox').length ){
     var $lat = $('#mapBox').data('lat');
@@ -168,14 +168,14 @@
     map.addMarker({
       lat: $markerLat,
       lng: $markerLon,
-      icon: $marker,    
+      icon: $marker,
       infoWindow: {
         content: $info
       }
     })
   }
   // google map - end
-  
+
   // price range - start
   // --------------------------------------------------
   if($("#slider-range").length){
@@ -191,7 +191,7 @@
     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
     " - $" + $( "#slider-range" ).slider( "values", 1 ) );
   }
-  
+
   $('.ar_top').on('click', function () {
     var getID = $(this).next().attr('id');
     var result = document.getElementById(getID);
@@ -205,7 +205,7 @@
   });
   // price range - end
   // --------------------------------------------------
-  
+
   // main slider - start ===================
   $('.main_slider').slick({
     dots: true,
@@ -226,7 +226,7 @@
       return '<a class="custom-dot" role="button" title="' + slideNumber + ' of ' + totalSlides + '"><span class="string">' + slideNumber + '</span></a>';
     }
   });
-  
+
   $('.main_slider').on('init', function (e, slick) {
     var $firstAnimatingElements = $('div.item:first-child').find('[data-animation]');
     doAnimations($firstAnimatingElements);
@@ -236,7 +236,7 @@
     doAnimations($animatingElements);
   });
   var slideCount = null;
-  
+
   $('.main_slider').on('init', function (event, slick) {
     slideCount = slick.slideCount;
     setSlideCount();
@@ -245,7 +245,7 @@
   $('.main_slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
     setCurrentSlideNumber(nextSlide);
   });
-  
+
   function setSlideCount() {
     var $el = $('.slide_count_wrap').find('.total');
     if (slideCount < 10) {
@@ -254,12 +254,12 @@
       $el.text(slideCount);
     }
   }
-  
+
   function setCurrentSlideNumber(currentSlide) {
     var $el = $('.slide_count_wrap').find('.current');
     $el.text(currentSlide + 1);
   }
-  
+
   function doAnimations(elements) {
     var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
     elements.each(function () {
@@ -275,7 +275,7 @@
       });
     });
   }
-  
+
   var $timer = 6000;
   function progressBar() {
     $(".slick-progress").find("span").removeAttr("style");
@@ -284,15 +284,15 @@
       $(".slick-progress").find("span").css("transition-duration", $timer / 1000 + "s").addClass("active");
     }, 100);
   }
-  
+
   progressBar();
   $('.main_slider').on("beforeChange", function (e, slick) {
     progressBar();
   });
   // main slider - end
   // --------------------------------------------------
-  
-  
+
+
   // slick slider-1 start
   $('.slideshow1_slider').slick({
     dots: true,
@@ -351,7 +351,7 @@
       }
     ]
   });
-  
+
   // slick slider-2 start
   $('.slideshow2_slider').slick({
     dots: true,
@@ -384,9 +384,9 @@
     //         }
     //     }
     // ]
-    
+
   });
-  
+
   // slick slider-3 start
   $('.slideshow3_slider').slick({
     dots: true,
@@ -432,7 +432,7 @@
       }
     ]
   });
-  
+
   // slick slider-4 start
   $('.slideshow4_slider').slick({
     dots: true,
@@ -466,7 +466,7 @@
       }
     ]
   });
-  
+
   // slick slider-5 start
   $('.slideshow5_slider').slick({
     dots: true,
@@ -500,9 +500,9 @@
       }
     ]
   });
-  
-  
-  
+
+
+
   // slick slider-6 start
   $('.slideshow6_slider').slick({
     dots: true,
@@ -554,7 +554,7 @@
       }
     ]
   });
-  
+
   // slick slider-7 start
   $('.slideshow7_slider').slick({
     dots: true,
@@ -604,7 +604,7 @@
       }
     ]
   });
-  
+
   // slick slider-8 start
   $('.slideshow8_slider').slick({
     dots: true,
@@ -654,7 +654,7 @@
       }
     ]
   });
-  
+
   // slick slider-9 start
   $('.slideshow9_slider').slick({
     dots: true,
@@ -688,10 +688,10 @@
       }
     ]
   });
-  
-  
+
+
   // center slider start
-  
+
   $('.center').slick({
     centerMode: true,
     centerPadding: '60px',
@@ -717,7 +717,7 @@
       }
     ]
   });
-  
+
   // vertical slider start ================
   $('.slider-for').slick({
     slidesToShow: 1,
@@ -761,9 +761,9 @@
       }
     ]
   });
-  
+
   // vertical slider end ================
-  
+
   // vertical slider start ================
   $('.product7_slide_items').slick({
     slidesToShow: 1,
@@ -805,7 +805,7 @@
       }
     ]
   });
-  
+
   // vertical slider start ================
   $('.testimonial3_slider_items').slick({
     slidesToShow: 1,
@@ -844,7 +844,7 @@
       }
     ]
   });
-  
+
   // vertical slider start ================
   $('.product11_slide_item').slick({
     slidesToShow: 1,
@@ -883,26 +883,26 @@
       }
     ]
   });
-  
+
   // main search btn - start // --------------------------------------------------
   $('.main_search_btn').on('click', function() {
     $(this).toggleClass('active');
   });
   // main search btn - end // --------------------------------------------------
-  
+
   // main search btn - start // --------------------------------------------------
   $('.main_search_btn2').on('click', function() {
     $(this).toggleClass('active');
   });
   // main search btn - end // --------------------------------------------------
-  
+
   // main search btn - start // --------------------------------------------------
   $('.main_search_btn3').on('click', function() {
     $(this).toggleClass('active');
   });
   // main search btn - end // --------------------------------------------------
-  
-  
+
+
   // popup images & videos - start ===============
   $('.popup_video').magnificPopup({
     type: 'iframe',
@@ -911,7 +911,7 @@
     mainClass: 'mfp-fade',
     fixedContentPos: false
   });
-  
+
   $('.zoom-gallery').magnificPopup({
     delegate: '.popup_image',
     type: 'image',
@@ -928,11 +928,11 @@
         return element.find('img');
       }
     }
-    
+
   });
   // popup images & videos - end =================
-  
-  
+
+
   // chart bar - start
   // --------------------------------------------------
   var revenue_chart = $("#revenue_chart");
@@ -957,7 +957,7 @@
   }
   // chart bar - end
   // --------------------------------------------------
-  
+
   // chart pie - start
   // --------------------------------------------------
   var BAChartDataValue = [5, 20, 25, 50];
@@ -973,7 +973,7 @@
     "#fec107",
     "#01a1ff"
   ];
-  
+
   var BAChartCountTotal = 0;
   if (BAChartDataValue.length > 0) {
     BAChartCountTotal = BAChartDataValue.reduce(function (
@@ -986,7 +986,7 @@
       },
       0);
     }
-    
+
     window.addEventListener("load", function () {
       var BAChartCtx = document
       .getElementById("overall_sale_chart")
@@ -1044,8 +1044,31 @@
     });
     // chart pie - end
     // --------------------------------------------------
-    
-    
+
+
+    // SCMC navigation: remove demo dropdown behavior and keep useful direct pages.
+    if (document.body.classList.contains('scmc-inner-page')) {
+      var scmcNavMap = [
+        ['Home', 'Accueil', 'index.html'],
+        ['Shop', 'Boutique', 'shop-list.html'],
+        ['Blog', 'Actualités', 'blog-list.html'],
+        ['Portfolio', 'SCMC', 'about-us.html'],
+        ['Pages', 'À propos', 'about-us.html'],
+        ['Contacts', 'Contact', 'contact-us.html']
+      ];
+      document.querySelectorAll('.main_menu_list > li > a.nav-link').forEach(function (link) {
+        var label = link.textContent.trim();
+        scmcNavMap.forEach(function (item) {
+          if (label === item[0] || label === item[1]) {
+            link.textContent = item[1];
+            link.setAttribute('href', item[2]);
+            link.removeAttribute('data-bs-toggle');
+            link.removeAttribute('aria-expanded');
+            link.removeAttribute('role');
+          }
+        });
+      });
+    }
   })(jQuery);
-  
-  
+
+
