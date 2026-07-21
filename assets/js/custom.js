@@ -1051,9 +1051,9 @@
       var scmcNavMap = [
         ['Home', 'Accueil', 'index.html'],
         ['Shop', 'Boutique', 'shop-list.html'],
-        ['Blog', 'Actualités', 'blog-list.html'],
+        ['Blog', 'Actualit\u00e9s', 'blog-list.html'],
         ['Portfolio', 'SCMC', 'about-us.html'],
-        ['Pages', 'À propos', 'about-us.html'],
+        ['Pages', '\u00c0 propos', 'about-us.html'],
         ['Contacts', 'Contact', 'contact-us.html']
       ];
       document.querySelectorAll('.main_menu_list > li > a.nav-link').forEach(function (link) {
@@ -1067,6 +1067,67 @@
             link.removeAttribute('role');
           }
         });
+      });
+
+      var scmcCurrentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.main_menu_list > li > a.nav-link').forEach(function (link) {
+        link.classList.remove('active');
+        var linkPage = (link.getAttribute('href') || '').split('/').pop();
+        if (linkPage === scmcCurrentPage ||
+            (scmcCurrentPage.indexOf('blog-') === 0 && linkPage === 'blog-list.html') ||
+            (scmcCurrentPage === 'product-detail.html' && linkPage === 'shop-list.html')) {
+          link.classList.add('active');
+        }
+        if (link.textContent.trim() === 'Veg Sales' || link.textContent.trim() === 'Nos offres') {
+          link.closest('li').style.display = 'none';
+        }
+      });
+
+      document.querySelectorAll('.shipping').forEach(function (el) {
+        el.textContent = 'Livraison offerte d\u00e8s 30 000 FCFA';
+      });
+      document.querySelectorAll('.vendor').forEach(function (el) {
+        var parentLink = el.closest('a');
+        if (parentLink) parentLink.style.display = 'none';
+      });
+      document.querySelectorAll('.Order').forEach(function (el) {
+        el.textContent = 'Suivre ma commande';
+      });
+      document.querySelectorAll('.wish').forEach(function (el) {
+        el.textContent = 'Mes favoris';
+      });
+      document.querySelectorAll('.recent_view').forEach(function (el) {
+        el.textContent = 'Cacao ivoirien, transform\u00e9 localement';
+      });
+      document.querySelectorAll('.about_header input[type="search"]').forEach(function (input) {
+        input.setAttribute('placeholder', 'Rechercher un produit L\u2019Or Brun');
+      });
+      document.querySelectorAll('#offcanvasRight h5').forEach(function (title) {
+        title.textContent = 'Votre panier';
+      });
+      document.querySelectorAll('#offcanvasRight a').forEach(function (link) {
+        if (link.textContent.trim() === 'View Cart') link.textContent = 'Voir le panier';
+        if (link.textContent.trim() === 'Checkout') link.textContent = 'Finaliser la commande';
+      });
+
+      var scmcFaqAnswers = [
+        'Nous proposons plusieurs formats adaptés aux particuliers et aux professionnels. Les formats disponibles sont précisés sur chaque fiche produit.',
+        'Oui. Nous livrons à Abidjan et dans plusieurs villes de Côte d’Ivoire. Le délai et les frais sont confirmés avant la validation de la commande.',
+        'Le paiement peut être effectué par Mobile Money ou selon les autres solutions présentées au moment de la commande.',
+        'Oui. Vous pouvez passer commande comme invité en renseignant uniquement les informations nécessaires à la livraison.',
+        'Conservez-les dans un endroit frais et sec, à l’abri du soleil, de l’humidité et des odeurs fortes. Refermez soigneusement l’emballage après usage.',
+        'Après validation, vous recevez les informations de suivi. Notre équipe reste disponible via la page Contact pour toute précision.',
+        'Oui. SCMC accompagne revendeurs, artisans, restaurateurs et entreprises avec des formats et volumes adaptés à leurs besoins.',
+        'Photographiez le colis dès sa réception et contactez-nous rapidement avec votre référence de commande afin que notre équipe puisse vous assister.'
+      ];
+      document.querySelectorAll('.faqs_section .accordion-body').forEach(function (answer, index) {
+        if (scmcFaqAnswers[index]) answer.textContent = scmcFaqAnswers[index];
+      });
+    }
+
+    if (document.body.classList.contains('scmc-homepage') || document.body.classList.contains('scmc-inner-page')) {
+      document.querySelectorAll('#offcanvasRight h5').forEach(function (title) {
+        title.textContent = 'Votre panier';
       });
     }
   })(jQuery);
